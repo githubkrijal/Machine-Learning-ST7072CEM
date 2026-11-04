@@ -1,0 +1,43 @@
+model,configuration,fit_seconds,validation_ap,validation_accuracy,f1_threshold,accuracy_threshold,parameters
+Logistic regression,1,0.6209324169903994,0.05931792778136495,0.9976631748589847,0.9353254380207929,0.9912307558907805,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=0.01, class_weight='balanced',
+                                    max_iter=3000, random_state=42))])"
+Logistic regression,2,0.47407162497984245,0.05983063718993832,0.9976631748589847,0.9396184728089426,0.9912318315998039,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=0.1, class_weight='balanced',
+                                    max_iter=3000, random_state=42))])"
+Logistic regression,3,0.41064083302626386,0.05988317746403487,0.9976631748589847,0.9400544122317239,0.9911980150601548,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=1, class_weight='balanced', max_iter=3000,
+                                    random_state=42))])"
+Linear SVM,1,0.5802585000055842,0.06447726785298184,0.9976631748589847,0.8585848810918046,1.415086053750728,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('linearsvc',
+                 LinearSVC(C=0.01, class_weight='balanced', dual=False,
+                           max_iter=10000, random_state=42))])"
+Linear SVM,2,0.6508885840303265,0.06442100638905392,0.9976631748589847,0.86078446042185,1.4157237495697266,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('linearsvc',
+                 LinearSVC(C=0.1, class_weight='balanced', dual=False,
+                           max_iter=10000, random_state=42))])"
+Linear SVM,3,0.6756860419991426,0.06442599023162328,0.9976631748589847,0.8610087655333889,1.4157823524990842,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('linearsvc',
+                 LinearSVC(C=1, class_weight='balanced', dual=False,
+                           max_iter=10000, random_state=42))])"
+Random forest,1,15.059982166974805,0.03613566764085067,0.9976631748589847,0.9236607061435129,0.9523509380358526,"RandomForestClassifier(class_weight='balanced_subsample', max_depth=8,
+                       min_samples_leaf=10, n_estimators=150, n_jobs=2,
+                       random_state=42)"
+Random forest,2,16.24745399999665,0.03549266863841521,0.9976631748589847,0.8447013258871391,0.9665878554237383,"RandomForestClassifier(class_weight='balanced_subsample', max_depth=12,
+                       min_samples_leaf=10, n_estimators=150, n_jobs=2,
+                       random_state=42)"
+Random forest,3,17.004933124990202,0.041961031750891734,0.9976746863128814,0.36320289935654076,0.9559993827815922,"RandomForestClassifier(class_weight='balanced_subsample', min_samples_leaf=10,
+                       n_estimators=150, n_jobs=2, random_state=42)"
+Gradient boosting,1,2.2099480420001782,0.04610380269567084,0.9976631748589847,0.9228933712483971,0.9771885246597702,"HistGradientBoostingClassifier(class_weight='balanced', early_stopping=False,
+                               l2_regularization=1, learning_rate=0.08,
+                               max_iter=150, max_leaf_nodes=7, random_state=42)"
+Gradient boosting,2,2.4981991249951534,0.04562102819842617,0.9976631748589847,0.9217565669543976,0.9864759112714951,"HistGradientBoostingClassifier(class_weight='balanced', early_stopping=False,
+                               l2_regularization=1, learning_rate=0.08,
+                               max_iter=150, max_leaf_nodes=15,
+                               random_state=42)"
+Gradient boosting,3,2.800562707998324,0.04114235381051784,0.9976631748589847,0.923924672890946,0.9858827180141086,"HistGradientBoostingClassifier(class_weight='balanced', early_stopping=False,
+                               l2_regularization=1, learning_rate=0.08,
+                               max_iter=150, random_state=42)"

@@ -1,0 +1,8 @@
+{
+  "selected_by_validation_AP": "Linear SVM",
+  "selected_by_validation_accuracy": "Logistic regression",
+  "data_sha256": "cbb5c36b9e185be8c841bbd4ec8c964ab1ed5fc208c46f5fa8ce45dc23174642",
+  "weather_locations": 218,
+  "features": 21,
+  "provisional": true
+}

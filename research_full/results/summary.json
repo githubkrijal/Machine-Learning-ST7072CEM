@@ -1,0 +1,9 @@
+{
+  "selected_by_validation_AP": "Linear SVM",
+  "selected_by_validation_accuracy": "Random forest",
+  "data_sha256": "a796e2c9ca0b6ac40100c477d219e9e30ad02757b089402e05a1e1ffae7074b9",
+  "weather_locations": 238,
+  "features": 21,
+  "provisional": false,
+  "run_date": "2026-11-04"
+}

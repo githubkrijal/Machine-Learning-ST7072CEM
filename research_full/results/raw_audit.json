@@ -1,0 +1,52 @@
+{
+  "columns": [
+    "OBJECTID",
+    "LATITUDE",
+    "LONGITUDE",
+    "BRIGHTNESS",
+    "SCAN",
+    "TRACK",
+    "ACQ_DATE",
+    "ACQ_TIME",
+    "SATELLITE",
+    "CONFIDENCE",
+    "VERSION",
+    "BRIGHT_T31",
+    "FRP",
+    "WardNumber",
+    "DISTRICT",
+    "ZONE",
+    "VDC",
+    "PA",
+    "GRIDID",
+    "ELEVATION",
+    "SLOPE",
+    "LCCODE",
+    "LANDCOVER",
+    "SHAPE_X_METERS",
+    "SHAPE_Y_METERS"
+  ],
+  "rows": 13781,
+  "exact_duplicate_rows": 0,
+  "numeric_ranges": {
+    "LATITUDE": [
+      26.426,
+      30.10937
+    ],
+    "LONGITUDE": [
+      80.10448,
+      88.16501
+    ],
+    "CONFIDENCE": [
+      0.0,
+      100.0
+    ],
+    "FRP": [
+      3.792557,
+      1128.395
+    ]
+  },
+  "invalid_coordinate_rows": 0,
+  "distinct_returned_weather_cells": 238,
+  "weather_files": 238
+}

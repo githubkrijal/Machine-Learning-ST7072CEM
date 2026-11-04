@@ -1,0 +1,340 @@
+Hybrid Water Quality Assessment Using K-Means,
+Random Forest, SVM, and k-NN: A Case Study of
+the Mahakali River, Nepal
+Tek Raj Bhatt
+Student ID: 250069,CUID: 16544288
+MSc. Data Science and Computational Intelligence
+Softwarica College of IT and E-commerce (Coventry University)
+250069@softwarica.edu.np
+Abstract—Water quality assessment is critical for sustainable
+water resource management in developing regions. This study
+analyses the water quality in the Mahakali River basin of
+Nepal using a hybrid machine learning approach that combines
+supervised and unsupervised learning. Over the course of three
+years (2023–2025), bi-monthly measurements from fifteen moni-
+toring stations produced 720 samples that were characterised by
+ten physicochemical parameters. Principal Component Analysis
+decreased the dimensionality from 10 to 7 components while
+keeping 92.75% of the variance after K-Nearest Neighbours
+imputation for missing values (12.5%). Two different regimes
+were found using K-means clustering: Cluster 0 (38%, “Poor”
+quality, WQI=62.90) and Cluster 1 (62%, “Good” quality,
+WQI=36.54). Three supervised classifiers performed exception-
+ally well: Random Forest (97.92%), SVM (97.22%), and k-
+NN (99.31% accuracy). Ammonia (32.18%), iron (20.23%), and
+chloride (13.22%) were identified as the top predictors by feature
+importance analysis. This study shows that hybrid machine
+learning techniques can provide actionable insights for focused
+interventions and characterise water quality with 99% accuracy.
+Index Terms—water quality assessment, machine learning, K-
+means clustering, Random Forest, Support Vector Machine, k-
+Nearest Neighbors, Water Quality Index, Mahakali River, Nepal
+I. INTRODUCTION
+Water quality is a fundamental determinant of public health
+and sustainable development. Freshwater resources in devel-
+oping countries are increasingly contaminated by domestic
+sewage, industrial effluents, and agricultural runoff [2]. Nepal
+has a lot of water from rivers that are fed by snow, but the
+water quality is bad because the treatment infrastructure is not
+good enough [3].
+The Mahakali River is an important source of fresh water for
+Nepal’s Far-Western Province. It provides drinking water, irri-
+gation, and hydropower to more than 500,000 people living in
+the Baitadi, Dadeldhura, and Kanchanpur districts. However,
+increasing anthropogenic activities have raised concerns about
+deteriorating water quality. Traditional monitoring approaches
+rely on periodic sampling, generating discrete snapshots that
+may not capture temporal dynamics or identify patterns in
+complex multivariate datasets.
+Machine learning techniques possess the capacity to rev-
+olutionise environmental monitoring through the extraction
+of patterns from high-dimensional data and the facilitation
+of predictive modelling [1], [4]. Unsupervised learning algo-
+rithms effectively identify natural groupings in the absence
+of predefined labels, whereas supervised methods attain high
+predictive accuracy in classification tasks [5].
+This study uses a hybrid methodology that integrates Prin-
+cipal Component Analysis (PCA), K-means clustering, Water
+Quality Index (WQI) computation, and three supervised classi-
+fiers—Random Forest (RF), Support Vector Machine (SVM),
+and k-Nearest Neighbours (k-NN)—for the evaluation of water
+quality in the Mahakali River basin.
+The main goal is to create and test a hybrid machine learning
+method that can classify data with more than 80% accuracy.
+Secondary objectives encompass dataset preprocessing, the
+application of PCA for dimensionality reduction, the imple-
+mentation of K-means clustering, the calculation of WQI for
+objective labelling, the training of supervised classifiers, and
+the analysis of spatial-temporal patterns.
+II. THEDATASET
+Oxfam’s TROSA programmes, which took place every two
+months from January 2023 to December 2025 at 15 monitoring
+stations in three districts, provided data on water quality. The
+basin has elevations ranging from 150 m to more than 7,000
+m above sea level. It has subtropical to alpine climates, with
+an average of 1,500 to 2,500 mm of rain falling each year,
+mostly during the monsoon season.
+Samples were taken according to WHO guidelines [3],
+and they were tested at certified labs within 24 hours. We
+measured ten physicochemical parameters: temperature, pH,
+total hardness, chloride, ammonia, phosphate, nitrate, iron, free
+residual chlorine, and coliform bacteria. Table I gives a short
+summary of the dataset’s features.
+III. DATAPREPARATION
+A. Data Preprocessing Pipeline
+Raw monitoring data required extensive preprocessing ad-
+dressing quality issues inherent in field-collected environ-
+TABLE I
+DATASETCHARACTERISTICS ANDSTRUCTURE
+Characteristic Description
+Temporal coverage January 2023 - December 2025 (3
+years)
+Sampling frequency Bi-monthly (6 samples/station/year)
+Spatial coverage 15 stations across 3 districts
+Total samples 720
+Parameters 10 physicochemical indicators
+Fig. 1. Comparison of feature distribution before and after Z-score normali-
+sation, showing all parameters transformed to zero mean and unit variance.
+mental datasets. The six-stage pipeline included: (1) data
+loading and structural validation, (2) metadata integration,
+(3) missing value analysis showing 898 missing values
+(12.47%), (4) text normalisation turning qualitative coliform
+observations into numbers, (5) K-Nearest Neighbours imputa-
+tion with n neighbors= 5, and(6)f eaturescalingusingZ−
+scorenormalisation:z i = xi−µ
+σ (1) wherex i is the original
+value,µis the mean, andσis the standard deviation.
+B. Class Imbalance Handling
+The dataset had a moderate class imbalance, with 61.67%
+of the data being good and 38.33% being bad (a ratio of
+1.61:1). To avoid bias towards the majority class, the Synthetic
+Minority Over-sampling Technique (SMOTE) was used to
+make the class distribution in the training set 50:50 [6].
+C. Dimensionality Reduction
+Principal Component Analysis was applied for dimension-
+ality reduction. The mathematical formulation involves eigen-
+decomposition of the covariance matrix:
+C= 1
+n−1 XT X(2)
+whereCis the covariance matrix andXis the standardized
+data matrix.
+PCA analysis identified that the first seven components cu-
+mulatively explained 92.75% of total variance. PC1 dominated
+variance structure (49.34%) with high positive loadings on
+pollution indicators: ammonia (0.862), iron (0.842), phosphate
+(0.810), nitrate (0.808), and chloride (0.772).
+IV. METHODOLOGY
+A. K-Means Clustering
+K-means clustering divides samples into k homogeneous
+clusters by minimising the within-cluster sum of squares
+Fig. 2. PCA variance explained showing scree plot (left) and cumulative
+variance curve (right). First seven components explain 92.75% of total
+variance.
+Fig. 3. PCA loadings heatmap for PC1-PC7 showing parameter contributions
+to each principal component.
+Fig. 4. Feature correlation matrix showing 18 parameter pairs with correlation
+coefficients greater than 0.5, proving multicollinearity.
+Fig. 5. K-means optimal cluster selection showing elbow method, silhouette
+analysis, and Davies-Bouldin index supporting k=2.
+Fig. 6. PCA 2D scatter plot showing samples clustering naturally into two
+primary groups along the PC1 axis.
+(WCSS):
+WCSS=
+kX
+i=1
+X
+x∈Ci
+||x−µ i||2 (3)
+The elbow method, silhouette analysis, and Davies-Bouldin
+Index were used to find the best number of clusters. Despite
+elbow method suggesting k=3, both silhouette analysis (peaked
+at k=2, score 0.3454) and Davies-Bouldin index strongly
+supported k=2.
+B. Water Quality Index Calculation
+Water Quality Index provides an objective numerical score
+aggregating multiple parameters:
+WQI=
+nX
+i=1
+Wi ×Q i (4)
+whereW i is the weight given to parameteriandQ i is
+the quality score. Parameter weights were assigned based on
+WHO health significance. WQI scores were classified into five
+categories: Excellent (0-25), Good (26-50), Poor (51-75), Very
+Poor (76-100), and Unsuitable (¿100).
+TABLE II
+K-MEANSCLUSTERPROFILES(MEANVALUES)
+Parameter Cluster 0 Cluster 1 Diff
+Temperature (C) 23.51 22.88 +3%
+pH 6.90 7.42 -7%
+Hardness (mg/L) 298.85 182.28 +64%
+Chloride (mg/L) 101.54 48.10 +111%
+Ammonia (mg/L) 1.85 0.55 +236%
+Phosphate (mg/L) 0.25 0.08 +213%
+Nitrate (mg/L) 10.91 6.06 +80%
+Iron (mg/L) 1.64 0.49 +235%
+Free Res. Cl 0.32 0.20 +60%
+Coliform (MPN) 968.02 652.02 +48%
+Fig. 7. K-means clusters visualized in PCA space showing clear separation
+along PC1 axis with silhouette scores.
+C. Supervised Classification Models
+Three supervised algorithms were trained: (1) k-Nearest
+Neighbours with an optimal k=7, (2) Support Vector Machines
+with an RBF kernel, and (3) Random Forest with 100 es-
+timators [7]. We used accuracy, precision, recall, F1-score,
+and AUC-ROC to rate the models. Five-fold stratified cross-
+validation evaluated the model’s stability and generalisation
+ability.
+V. RESULTS
+A. K-Means Clustering Analysis
+The K-means model with k=2 converged in 5 iterations
+with silhouette coefficient 0.3454. Table II shows the profiles
+of the clusters. Cluster 0 had significantly higher pollution
+levels, especially for ammonia (+236%), iron (+235%), and
+phosphate (+213%).
+B. Water Quality Index
+The WQI calculation measured the overall quality of the
+water in all 720 samples, giving scores from 7.26 (excellent)
+to 100.37 (unsuitable). The distance between the clusters was
+26.36 WQI points. The purity within each cluster was very
+high. Cluster 0 had 96% truly degraded samples, and Cluster
+1 had 95% samples of acceptable quality.
+C. Supervised Classification Performance
+Three supervised algorithms achieved exceptional perfor-
+mance. Table III summarizes results.
+Fig. 8. Cluster radar chart comparing normalized feature profiles.
+Fig. 9. Heatmap of cluster characteristics showing the average feature values
+by cluster.
+TABLE III
+MODELPERFORMANCECOMPARISON
+Model Acc. Prec. F1 AUC
+k-NN (k=7) 99.31% 99.32% 99.31% 0.9987
+Random Forest 97.92% 97.98% 97.90% 0.9990
+SVM (RBF) 97.22% 97.28% 97.23% 0.9992
+D. Feature Importance Analysis
+Random Forest identified critical predictors. Table IV
+presents rankings.
+Ammonia was the most important predictor (32.18%),
+which makes sense since it is the main sign of organic
+pollution. The three most important features—ammonia, iron,
+and chloride—together accounted for 65.63% of the variance,
+making it easier to set up monitoring protocols.
+Fig. 10. WQI distribution showing bimodal histogram, boxplot with cluster
+separation, and quality category analysis.
+Fig. 11. Confusion matrices for all three models.
+Fig. 12. ROC curves comparison showing all models achieving TPR greater
+than 0.98 at FPR less than 0.05.
+E. Spatial and Temporal Patterns
+Spatial analysis revealed Kanchanpur district demonstrated
+superior water quality (28.75% poor samples) versus Baitadi
+(42.92%) and Dadeldhura (43.33%). There was a clear sea-
+sonal change, with bad samples going from 28–32% in winter
+to 45–50% in monsoon, which meant a 60% drop in quality.
+TABLE IV
+FEATUREIMPORTANCERANKINGS
+Rank Feature Imp. Cumul.
+1 Ammonia 0.3218 32.18%
+2 Iron 0.2023 52.41%
+3 Chloride 0.1322 65.63%
+4 Phosphate 0.1185 77.48%
+5 Total Hardness 0.0843 85.91%
+6 Nitrate 0.0698 92.89%
+7 Free Res. Cl 0.0365 96.54%
+8 pH 0.0252 99.06%
+9 Temperature 0.0065 99.71%
+10 Coliform 0.0029 100.00%
+Fig. 13. Feature importance visualization showing ammonia as dominant
+predictor (32.18%).
+VI. DISCUSSION
+The K-means analysis successfully identified two distinct
+water quality regimes, verified by various evaluations. The sil-
+houette coefficient (0.3454) falls within the ”fair to moderate”
+range typical for real-world environmental datasets [8].
+The exceptional supervised classification performance (k-
+NN: 99.31%, RF: 97.92%, SVM: 97.22%) substantially ex-
+ceeds typical water quality studies reporting 85-92% accuracy
+[4]. There are a few reasons for this: high-quality unsupervised
+clustering (95% within-cluster purity), strong KNN imputa-
+tion, SMOTE balancing, and data that is well-separated (26.36-
+point WQI separation).
+k-NN works better because it can handle decision bound-
+aries that are complicated in a small area, which is what
+happens to water quality when contamination is patchy. The
+feature importance hierarchy tells you useful things. For
+example, if you only measured ammonia, iron, and chloride,
+you could get two-thirds of the full model accuracy for 70%
+less money.
+The spatial heterogeneity (Kanchanpur 71% acceptable ver-
+sus Baitadi/Dadeldhura 57%) and 60% monsoon degradation
+align with established pollution mechanisms including agri-
+cultural runoff intensification and sewage system overflow.
+Limitations include the three-year study period potentially
+missing decadal trends, binary classification compressing con-
+tinuous gradients, spatial sampling density averaging one
+station per 23 km, and exclusion of emerging contaminants.
+VII. CONCLUSION
+This study successfully created a hybrid machine learning
+framework that reached a classification accuracy of 99.31%,
+which is far higher than the 80% aim. The idea offers a
+similar way to work with environmental datasets that don’t
+have ground-truth labelling.
+Key findings include: (1) ammonia, iron, and chloride as
+top predictors enabling 3-parameter monitoring protocols, (2)
+Kanchanpur superior quality versus other districts, (3) 60%
+monsoon degradation, and (4) exceptional model stability
+across cross-validation.
+Recommendations include: use simplified monitoring that
+focuses on the top three parameters; give Baitadi and Dadeld-
+hura districts higher priority; improve monsoon management
+by taking samples every week; fix sanitation problems; and
+use a k-NN classifier in operational systems.
+The methods can be easily used in other places where there
+isn’t much data, which will have an effect beyond the Mahakali
+basin and help keep water safe in the region.
+VIII. FUTURERESEARCH
+Future directions encompass: temporal dynamics modelling
+via time-series analysis, deep learning investigation utilis-
+ing recurrent neural networks, source apportionment integra-
+tion, multi-river comparative studies, augmented contaminant
+suites, economic cost-benefit analysis, and real-time deploy-
+ment validation employing IoT sensors.
+REFERENCES
+[1] A. G ´eron,Hands-On Machine Learning with Scikit-Learn, Keras & Ten-
+sorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems,
+3rd ed. Sebastopol, CA: O’Reilly Media, 2022.
+[2] R. P. Schwarzenbach, T. Egli, T. B. Hofstetter, U. V on Gunten, and B.
+Wehrli, “Global water pollution and human health,”Annual Review of
+Environment and Resources, vol. 35, pp. 109–136, 2010.
+[3] R. Pant and F. Zhang, “Water quality and aging index - policy imper-
+atives for water security in Nepal,”Water Policy, vol. 14, no. 5, pp.
+868–885, 2012.
+[4] U. Ahmed, R. Mumtaz, R. Irfan, and J. Garc ´ıa-Nieto, “Efficient water
+quality prediction using supervised machine learning,”Water, vol. 11,
+no. 11, p. 2210, 2019.
+[5] A. Najah Ahmed, F. Binti Othman, H. Abdulmohsin Afan, R. Khaleel
+Ibrahim, C. Ming Fai, M. Shabbir Hossain, and A. Elshafie, “Machine
+learning methods for better water quality prediction,”Journal of Hydrol-
+ogy, vol. 578, p. 124084, 2019.
+[6] N. V . Chawla, K. W. Bowyer, L. O. Hall, and W. P. Kegelmeyer,
+“SMOTE: Synthetic minority over-sampling technique,”Journal of
+Artificial Intelligence Research, vol. 16, pp. 321–357, 2002.
+[7] L. Breiman, “Random forests,”Machine Learning, vol. 45, no. 1, pp.
+5–32, 2001.
+[8] P. J. Rousseeuw, “Silhouettes: A graphical aid to the interpretation and
+validation of cluster analysis,”Journal of Computational and Applied
+Mathematics, vol. 20, pp. 53–65, 1987.
+APPENDIX
+The research’s full source code, datasets, model implemen-
+tations, and documentation can be found at:
+GitHub Repository: tek-raj-bhatt-250069/STW7072CEM-
+Machine-Learning
+
+
+
+
+
+
+
+
+
+

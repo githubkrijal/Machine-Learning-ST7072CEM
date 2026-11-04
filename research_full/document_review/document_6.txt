@@ -1,0 +1,98 @@
+ 
+Experimental Paper Blueprints for Forest Fire Risk Prediction in Nepal Project:  A Machine Learning Approach for Forest Fire Risk Prediction in Nepal Paper 1:  Synergistic approaches in forest fire risk mapping using fuzzy AHP and machine learning models in the Chure Tarai Madhesh Landscape (CTML) of Nepal  Milan Dhakal, Balram Bhatta, Prakash Lamichhane and Ashok Parajuli.  Published 12 December 2024. Website: https://www.tandfonline.com/doi/full/10.1080/19475705.2024.2436540 Section Element Purpose In my field? My notes and ideas Introduction 500 – 1000 words Importance of the topic Introduce the topic and outline why it should be studied Yes Forest fires harm wildlife and nearby communities. Predicting areas at risk can help plan prevention.  Brief literature review Situate your study within the context of your field Yes Earlier studies used expert ratings or models trained on past fire records to identify areas at risk.  Research gap Provide justification for your study Yes Earlier studies rarely compared fire risk maps based on experts’ judgement with maps produced by machine learning.   Research aim Present what your study was about Yes Compare three methods and use the best one to map forest fire risk.  The main contributions of the paper (optional) 
+Highlight what novel insights your study offers Yes The study shows how expert ratings, Random Forest and Boosted Regression Tree give different risk maps for the same landscape.  Structure of the paper (optional) Present the organization of the paper No The paper does not include what each following section contains. Literature Review optional · 1000 – 1500 words 
+Definitions of key concepts Provide any necessary definitions of contested terms important in your research 
+Yes Expert-based methods use people’s judgement to rate risk. Machine learning methods learn patterns from recorded fires. 
+ Key themes from the literature Outline the literature on the main topics related to your research 
+Yes The main themes are fire risk mapping, environmental factors, human activity and comparing expert ratings with machine learning.  Critical analysis Analyze previous studies critically to reinforce the research gap 
+Yes Simple weighted maps can miss complex fire patterns. Earlier research rarely tested expert ratings against machine learning, so their relative strengths were unclear. 
+ 
+Section Element Purpose In my field? My notes and ideas Theoretical Framework optional · 200 – 500 words 
+The theories utilized in the study Present which theories you drew upon when designing the study and/or analyzing the data 
+No There is no separate section setting out a theory. The authors explain how the modelling methods work instead. 
+Methodology 1000 – 1500 words Definition and justification of the research methodology 
+Outline and justify the chosen methodology Yes Random Forest and Boosted Regression Tree learn from fire records. Fuzzy AHP uses expert ratings. Comparing them helps assess which method predicts risk better.  Background information about the context of your study (optional) 
+Present the context in which your study was conducted (e.g. geography) 
+Yes The study covers southern Nepal. Wider coverage would be needed to represent Nepal’s mountain forests as well. 
+ Sample and sampling techniques + ethical considerations (if human/animal subjects) 
+Outline who or what you studied, how you got it, and any ethical considerations (if human/animal subjects) 
+Yes The study uses 500 fire and 500 non-fire locations: 70% for training and 30% for testing. Fifteen forest officers provided expert ratings. 
+ Research tools and procedures Specify which research tools you used and specifically how you conducted your study 
+Yes ArcGIS prepares the map layers. Google Earth Engine runs the machine learning models and produces risk maps. 
+ Data analysis techniques Present how you analyzed your data and justify your choice 
+Yes The authors check how well each model separates fire from non-fire locations and report accuracy, precision, recall and AUC. Results 1500 – 3000 words Presentation of the main results Present the results you obtained Yes Random Forest performed best, with AUC 0.95 and 91% accuracy. My models would need their own testing before comparing scores.  Clear use of tables, figures or quotes from participants 
+Provide a visual representation of the data and raw evidence 
+Yes The maps show risk levels, while the tables compare model scores and the amount of forest in each risk category. Discussion 500 – 1000 words Restatement of the result to be discussed Remind the reader of the result Yes Fires were concentrated before the monsoon, and the maps showed higher risk in western and low-elevation areas.  Comparison of the result with the literature Situate the result within the literature context Yes The higher risk in western and low-elevation areas agrees with earlier Nepal studies. Random Forest also performed well in studies elsewhere. 
+ 
+Section Element Purpose In my field? My notes and ideas  Explanation of the findings and/or differences with literature 
+Explain the findings you obtained and possible differences with previous studies 
+Yes Dry weather and available fuel help fires spread. Gentle slopes showed high risk here, possibly because people can reach them more easily. 
+ Interpretation of the findings Show what your findings mean and how they can be understood 
+Yes High-risk areas need more attention for monitoring and prevention. The maps help identify where that attention is needed. Conclusion 500 – 1000 words Restatement of the main aim and topic Remind the reader of the aim and topic of your study Yes The aim was to compare fire prediction methods and map areas at risk in the Chure Tarai Madhesh Landscape.  Recap of the key findings and contributions + a brief discussion 
+Restate the main results and discuss briefly Yes Random Forest gave the best results and classified 47.85% of the landscape’s forest area as high or very high risk.  Practical implications of the findings Show what impact your findings can have for different stakeholders 
+Yes Give short district summaries alongside the risk map so local forest managers can identify areas needing attention.  Limitations Acknowledge the limitations of your study Yes The datasets have different levels of detail, expert ratings can introduce bias, and models may fit past records too closely.   Suggestions for future research Suggest what future research should focus on Yes More detailed data and combining expert and machine learning methods.  
+ 
+Paper 2:  Nepal’s carbon stock and biodiversity are under threat from climate exacerbated forest fires Kshitij Dahal, Rocky Talchabhadel, Prajal Pradhan, Sujan Parajuli, Dinesh Shrestha, Ramesh Chhetri, Ambika P. Gautam, Rajee Tamrakar, Shakti Gurung, Saurav Kumar  Available online 19 February 2025, Version of Record 8 March 2025. Website: https://www.sciencedirect.com/science/article/pii/S305052082500003X?via%3Dihub Section Element Purpose In my field? My notes and ideas Introduction 500 – 1000 words Importance of the topic Introduce the topic and outline why it should be studied Yes Forest fires threaten Nepal’s wildlife and the carbon stored in trees and soil. Risk maps can help protect these resources.  Brief literature review Situate your study within the context of your field Yes Earlier Nepal studies mapped fire-prone areas, but information about the carbon and biodiversity exposed to fires remained limited.  Research gap Provide justification for your study Yes The effects of fire risk on Nepal’s carbon stocks and biodiversity were poorly understood.  Research aim Present what your study was about Yes Map how fire risk changed across Nepal and identify carbon stocks and biodiversity exposed to that risk.  The main contributions of the paper (optional) 
+Highlight what novel insights your study offers Yes The study links changing national fire risk maps with carbon stocks and protected areas, showing what could be harmed.  Structure of the paper (optional) Present the organization of the paper No The paper does not include a short paragraph explaining what each following section contains. Literature Review optional · 1000 – 1500 words 
+Definitions of key concepts Provide any necessary definitions of contested terms important in your research 
+Yes Fire susceptibility means how likely an area is to experience fire. Carbon at risk means stored carbon located in fire-prone areas. 
+ Key themes from the literature Outline the literature on the main topics related to your research 
+Yes The main themes are changing fire patterns, weather and terrain, carbon stocks and the protection of biodiversity.  Critical analysis Analyze previous studies critically to reinforce the research gap 
+Yes Earlier work often covered particular regions or a limited set of factors. This left gaps in understanding nationwide changes and the resources exposed to fires. Theoretical Framework optional · 200 – 500 words 
+The theories utilized in the study Present which theories you drew upon when designing the study and/or analyzing the data 
+No There is no separate section setting out a theory. 
+ 
+Section Element Purpose In my field? My notes and ideas Methodology 1000 – 1500 words Definition and justification of the research methodology 
+Outline and justify the chosen methodology Yes Random Forest is trained separately for four five-year periods from 2001 to 2020. 
+ Background information about the context of your study (optional) 
+Present the context in which your study was conducted (e.g. geography) 
+Yes The study covers all of Nepal.  
+ Sample and sampling techniques + ethical considerations (if human/animal subjects) 
+Outline who or what you studied, how you got it, and any ethical considerations (if human/animal subjects) 
+Yes Satellite fire records and randomly selected non-fire locations are split into 70% training data and 30% testing data. 
+ Research tools and procedures Specify which research tools you used and specifically how you conducted your study 
+Yes Google Earth Engine is used to build the models. The authors select useful variables and adjust model settings to improve performance. 
+ Data analysis techniques Present how you analyzed your data and justify your choice 
+Yes AUC measures how well the models separate fire from non-fire locations. I could also report false alarms and missed fires. Results 1500 – 3000 words Presentation of the main results Present the results you obtained Yes All four models had AUC values above 0.7. Fire risk increased in southern Nepal, including areas important for conservation.  Clear use of tables, figures or quotes from participants 
+Provide a visual representation of the data and raw evidence 
+Yes Maps show changes in fire risk. Tables and graphs show the carbon stocks and protected areas exposed to that risk. Discussion 500 – 1000 words Restatement of the result to be discussed Remind the reader of the result Yes Southern Nepal and parts of the western hills were more fire-prone, putting forests and protected areas at risk.  Comparison of the result with the literature Situate the result within the literature context Yes The higher risk in southern Nepal agrees with earlier studies. This study adds national coverage and estimates of carbon and biodiversity at risk.  Explanation of the findings and/or differences with literature 
+Explain the findings you obtained and possible differences with previous studies 
+Yes Dry conditions, terrain and human activity may help explain where fires occur. A model association alone does not prove a cause. 
+ Interpretation of the findings Show what your findings mean and how they can be understood 
+Yes The estimates identify carbon and biodiversity that could be harmed by fire. They do not measure carbon emissions from actual fires. 
+ 
+Section Element Purpose In my field? My notes and ideas Conclusion 500 – 1000 words Restatement of the main aim and topic Remind the reader of the aim and topic of your study Yes The study aimed to assess changing fire risk across Nepal and the threats to stored carbon and biodiversity.  Recap of the key findings and contributions + a brief discussion 
+Restate the main results and discuss briefly Yes Increasing fire risk in southern Nepal exposes important carbon stocks and protected areas to possible damage.  Practical implications of the findings Show what impact your findings can have for different stakeholders 
+Yes Conservation managers can use the maps to choose where to strengthen monitoring and prevention.  Limitations Acknowledge the limitations of your study Yes Satellites can miss fires or mistake other heat sources for fires. Datasets also differ in detail.  Suggestions for future research Suggest what future research should focus on Yes Examining future climate and social conditions.  
+ 
+Paper 3:  Ensembling machine learning models to identify forest fire-susceptible zones in Northeast India MrigankaShekhar Sarkar, BishalKumar Majhi, Bhawna Pathak, Tridipa Biswas, Soumik Mahapatra, Devendra Kumar, Indra D. Bhatt, Jagadish C. Kuniyal, Sunil Nautiyal Available online 10 April 2024. Website: https://www.sciencedirect.com/science/article/pii/S1574954124001407?via%3Dihub Section Element Purpose In my field? My notes and ideas Introduction 500 – 1000 words Importance of the topic Introduce the topic and outline why it should be studied Yes Forest fires damage ecosystems and affect people who depend on forests. Identifying fire-prone areas can support prevention.  Brief literature review Situate your study within the context of your field Yes Earlier research used different methods to connect fire records with weather, terrain, vegetation and human activity.  Research gap Provide justification for your study Yes Broader fire risk mapping was needed for Northeast India.   Research aim Present what your study was about Yes Identify fire-prone areas using five machine learning models and a model that combines their predictions.  The main contributions of the paper (optional) 
+Highlight what novel insights your study offers Yes The study compares five models across a large region and combines them to produce a regional fire risk map.  Structure of the paper (optional) Present the organization of the paper No The paper does not include a short paragraph explaining what each following section contains. Literature Review optional · 1000 – 1500 words 
+Definitions of key concepts Provide any necessary definitions of contested terms important in your research 
+Yes Fire susceptibility describes where fires are more likely. An ensemble combines predictions from several models. 
+ Key themes from the literature Outline the literature on the main topics related to your research 
+Yes The main themes are fire risk mapping, factors linked to fires and the strengths of different prediction methods.  Critical analysis Analyze previous studies critically to reinforce the research gap 
+Yes Different methods need different data and can produce different predictions. Comparing several models helps show which methods work better for this region. Theoretical Framework optional · 200 – 500 words 
+The theories utilized in the study Present which theories you drew upon when designing the study and/or analyzing the data 
+No There is no separate section setting out a theory. The authors explain the prediction methods and the factors used. 
+ 
+Section Element Purpose In my field? My notes and ideas Methodology 1000 – 1500 words Definition and justification of the research methodology 
+Outline and justify the chosen methodology Yes The authors test Random Forest, boosted trees, support vector machines, classification trees and adaptive regression splines, then combine their predictions.  Background information about the context of your study (optional) 
+Present the context in which your study was conducted (e.g. geography) 
+Yes The study covers Northeast India and northern West Bengal.  
+ Sample and sampling techniques + ethical considerations (if human/animal subjects) 
+Outline who or what you studied, how you got it, and any ethical considerations (if human/animal subjects) 
+Yes Satellite records from 2018–2019 were reduced to 12,577 fire locations to limit clustering. An equal number of comparison locations was selected. 
+ Research tools and procedures Specify which research tools you used and specifically how you conducted your study 
+Yes R and ArcMap prepare the data and models. Nine of the 32 variables were removed because they strongly overlapped with others. 
+ Data analysis techniques Present how you analyzed your data and justify your choice 
+Yes The paper reports repeated training and testing, including ten-fold validation and 70/30 splits. How these steps fit together is unclear;  Results 1500 – 3000 words Presentation of the main results Present the results you obtained Yes Random Forest was the best individual model, with AUC about 0.87. The combined map showed large forest areas at high risk.  Clear use of tables, figures or quotes from participants 
+Provide a visual representation of the data and raw evidence 
+Yes Maps show where risk is higher. Tables and ROC graphs compare the models and summarise the mapped areas. Discussion 500 – 1000 words Restatement of the result to be discussed Remind the reader of the result Yes Random Forest performed best individually, and combining the models helped identify fire-prone zones across the region.  Comparison of the result with the literature Situate the result within the literature context Yes The results support earlier findings that machine learning can map fire-prone areas. The paper compares model performance with other published studies.  Explanation of the findings and/or differences with literature 
+Explain the findings you obtained and possible differences with previous studies 
+Yes Weather, vegetation, terrain and human activity are linked to the mapped risk. A high importance score does not prove that a factor causes fires. 
+ Interpretation of the findings Show what your findings mean and how they can be understood 
+Yes The maps show where monitoring and prevention may be most useful. They do not give the exact date of the next fire. 
+ 
+Section Element Purpose In my field? My notes and ideas Conclusion 500 – 1000 words Restatement of the main aim and topic Remind the reader of the aim and topic of your study Yes The aim was to identify fire-prone zones across Northeast India using several models and their combined predictions.  Recap of the key findings and contributions + a brief discussion 
+Restate the main results and discuss briefly Yes The model comparison and combined map identify areas that need more attention for fire prevention and forest protection.  Practical implications of the findings Show what impact your findings can have for different stakeholders 
+Yes Forest managers can use the maps to prioritise monitoring, prevention and conservation work.  Limitations Acknowledge the limitations of your study Yes Only two years of fire data and one map scale were used.   Suggestions for future research Suggest what future research should focus on Yes The authors recommend longer fire records and maps at different scales.   

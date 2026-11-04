@@ -1,0 +1,22 @@
+model,configuration,validation_average_precision,parameters
+Dummy baseline,1,0.0019279553526128869,DummyClassifier()
+Logistic regression,1,0.026649946588500967,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=0.1, class_weight='balanced',
+                                    max_iter=2000, random_state=42))])"
+Logistic regression,2,0.026250669929842964,"Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=1, class_weight='balanced', max_iter=2000,
+                                    random_state=42))])"
+Random forest,1,0.0268659178160715,"RandomForestClassifier(class_weight='balanced_subsample', max_depth=12,
+                       min_samples_leaf=10, n_estimators=150, n_jobs=2,
+                       random_state=42)"
+Random forest,2,0.040950780219296705,"RandomForestClassifier(class_weight='balanced_subsample', min_samples_leaf=10,
+                       n_estimators=150, n_jobs=2, random_state=42)"
+Gradient boosting,1,0.041520606353618185,"HistGradientBoostingClassifier(class_weight='balanced', early_stopping=False,
+                               l2_regularization=1, learning_rate=0.08,
+                               max_iter=150, max_leaf_nodes=15,
+                               random_state=42)"
+Gradient boosting,2,0.041176667141079044,"HistGradientBoostingClassifier(class_weight='balanced', early_stopping=False,
+                               l2_regularization=1, learning_rate=0.08,
+                               max_iter=150, random_state=42)"

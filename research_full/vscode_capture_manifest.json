@@ -1,0 +1,57 @@
+[
+  {
+    "image": "vscode_02_cleaning.png",
+    "description": "Date conversion, repeated-detection removal and spatial filtering in prepare_assignment.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_04_terrain.png",
+    "description": "Terrain gradients and forest statistics in prepare_assignment.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_03_features.png",
+    "description": "Lagged weather features, rolling summaries and daily target construction in prepare_assignment.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_05_audit.png",
+    "description": "Saved preparation audit, retained records and chronological data splits.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_06_models.png",
+    "description": "Candidate algorithms, hyperparameters and evaluation helpers in research_experiments.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_07_training.png",
+    "description": "Candidate fitting, validation selection and saved evaluation outputs in research_experiments.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_08_preprocessing.png",
+    "description": "Controlled scaling, class-weighting, PCA and SMOTE comparisons in reanalysis_2026.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_09_checks.png",
+    "description": "Additional evaluation checks and weather-data assertions in reanalysis_2026.py.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_10_runner.png",
+    "description": "The runnable analysis entry point and its command-line options.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_01_code_and_run.png",
+    "description": "Project source alongside the completed analysis output in the VS Code terminal.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  },
+  {
+    "image": "vscode_11_completed_run.png",
+    "description": "The completed training and figure-generation command, measured outputs and completion message.",
+    "capture_method": "Direct screenshot of the open Visual Studio Code window"
+  }
+]

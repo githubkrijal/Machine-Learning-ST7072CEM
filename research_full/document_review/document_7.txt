@@ -1,0 +1,222 @@
+A Machine Learning Approach for F orest Fire Risk Prediction in Nepal
+Research Proposal
+STW7072CEM Machine Learning
+Student Name: Krijal Shrestha Coventry ID: 11495103
+Lecturer: Shrawan Thakur
+Introduction
+Forest fires are a recurring environmental hazard in
+Nepal, especially during the dry pre-monsoon sea-
+son. They damage forests and biodiversity, reduce
+air quality, release carbon, and threaten nearby
+communities. Satellite fire observations record past
+incidents, while weather data describe conditions
+that influence fuel drying, ignition, and fire spread.
+Combining these sources provides an opportunity
+to estimate daily forest-fire risk using machine
+learning.
+Nepal’s steep terrain, varied climate, and limited
+access to remote forests can make conventional
+monitoring and rapid response difficult. Fire occur-
+rence also changes by season and ecological region.
+A data-driven approach can examine these spatial
+and temporal differences consistently. Historical
+observations can be used to learn relationships be-
+tween environmental conditions and recorded fire
+events, producing risk estimates that may support
+monitoring and preparedness.
+This proposal presents a machine-learning frame-
+work that combines ICIMOD active-fire observa-
+tions with ERA5-Land weather information and
+relevant spatial data. The study focuses on daily
+fire occurrence between February 2012 and June
+2016. It will compare interpretable and nonlinear
+classification models and assess whether weather
+conditions provide useful predictive information
+for Nepal.
+Problem Statement
+Historical fire records show where fires were de-
+tected but do not predict risk for a new location
+or date. Fire observations must be matched with
+temperature, moisture, rainfall, and wind infor-
+mation by location and time. The data are also
+imbalanced because non-fire observations greatly
+outnumber recorded fires. A suitable method must
+prevent data leakage, address class imbalance, and
+evaluate missed fires as well as false alarms.
+Several technical problems must therefore be ad-
+dressed. Satellite detections can include repeated
+observations of the same event, while cloud cover
+and satellite overpass timing may cause some fires
+to be missed. Weather data use regular grid cells
+that do not exactly match fire coordinates, and
+hourly measurements must be transformed into
+meaningful daily and recent-weather indicators.
+Randomly dividing observations could allow closely
+related dates to appear in both training and testing
+data, resulting in an overly optimistic evaluation.
+The proposed approach will use chronological data
+partitions and metrics appropriate for an imbal-
+anced classification problem.
+Objective
+The main objective is to develop and evaluate a
+machine-learning model for daily forest-fire occur-
+rence in Nepal. The study will:
+• combine ICIMOD fire records with weather and
+spatial data;
+•derive daily and recent-weather predictors;
+• compare Logistic Regression, Random Forest,
+and Gradient Boosting; and
+• evaluate performance and identify influential
+predictors.
+Proposed Methodology
+The proposed workflow is shown in Figure 1. It
+separates data preparation, feature engineering,
+model development, temporal validation, and final
+outputs so that each stage can be checked and
+reproduced.
+1
+Figure 1: Proposed forest-fire risk prediction
+workflow.
+1. Data preparation and integration.Coor-
+dinates and acquisition dates will be checked for
+missing, invalid, or duplicate records. Fire observa-
+tions will be assigned to the nearest weather grid
+cell and date. Temperature and dewpoint will be
+used to estimate atmospheric moisture, the two
+wind components will be combined to calculate
+wind speed, and precipitation will be converted
+to millimetres. Hourly observations will then be
+summarized into suitable daily indicators.
+2. Feature engineering and target construc-
+tion.Daily mean, minimum, maximum, and ac-
+cumulated weather indicators will be produced as
+appropriate. Rolling rainfall totals, previous-day
+temperature, recent wind conditions, consecutive
+dry days, month, and season will be considered.
+A value of 1 will represent a grid-cell day with a
+recorded fire. Sampled forested grid-cell days with-
+out a recorded detection will form the comparison
+class. Sampling and class weighting will be applied
+only to the training data.
+3. Model development.Logistic Regression will
+provide a transparent baseline. Random Forest will
+capture nonlinear relationships and interactions,
+and Gradient Boosting will test whether sequential
+tree learning improves prediction. Data from 2012–
+2014 will be used for training, 2015 for validation
+and model selection, and January–June 2016 for
+final testing. This chronological split will reduce
+leakage from future dates.
+4. Evaluation and interpretation.Accuracy
+will not be used alone because non-fire observa-
+tions are expected to outnumber fire observations.
+Precision will measure the reliability of positive pre-
+dictions, while recall will measure the proportion
+of recorded fires identified. F1-score, ROC-AUC,
+precision–recall curves, and confusion matrices will
+provide complementary evidence. Feature impor-
+tance and mapped predictions will help explain
+the final model.
+Data Source
+ICIMOD active-fire incidents:13,781 records
+dated 1 February 2012–19 June 2016, including
+coordinates, dates, and land-cover information.
+ERA5-Land:Daily or hourly 2-metre tempera-
+ture, 2-metre dewpoint temperature, total precipi-
+tation, and 10-metre U and V wind components for
+Nepal. A Nepal boundary and available elevation
+or forest-cover layers will provide spatial context.
+The weather data should cover at least 25 Jan-
+uary 2012–19 June 2016 so that seven-day lagged
+features can be calculated for the earliest fire obser-
+vations. The study area will use Nepal’s national
+boundary or, when necessary, the approximate
+bounding box 26.0–30.5 degrees north and 80.0–
+88.5 degrees east. The data will be downloaded
+in manageable yearly batches and then combined
+after checking variables, dates, units, coordinate
+orientation, and spatial resolution.
+Expected Output
+The project will produce a cleaned fire–weather
+dataset, engineered predictors, three trained
+classification models, and a comparison of their
+performance. Expected presentation outputs
+include confusion matrices, evaluation curves,
+feature-importance charts, and maps of estimated
+daily fire risk. The final report will describe the
+method, findings, limitations, and recommenda-
+tions.
+The principal analytical output will be a daily
+probability or risk score for each eligible location.
+Results will identify the model that performs best
+on unseen dates and the environmental features
+most strongly associated with recorded fire oc-
+currence. The project will also provide reusable
+Python processing steps so that additional years
+of weather and fire observations can be incorpo-
+rated later. The outputs are intended for academic
+analysis; operational warnings would require fur-
+ther validation with near-real-time observations
+and consultation with relevant authorities.
+2
+References
+Breiman, L. (2001). Random forests.Machine Learn-
+ing, 45(1), 5–32. https://doi.org/10.1023/A:
+1010933404324
+Friedman, J. H. (2001). Greedy function approxima-
+tion: A gradient boosting machine.The Annals of
+Statistics, 29(5), 1189–1232.https://doi.org/10
+.1214/aos/1013203451
+International Centre for Integrated Mountain Devel-
+opment. (n.d.).Putting out fires: Predicting and
+curbing forest fire damages in Nepal.https://ww
+w.icimod.org/adaptation-solutions/putting-o
+ut-fires-predicting-and-curbing-forest-fir
+e-damages-in-nepal/
+International Centre for Integrated Mountain Develop-
+ment. (2012).Active fire incidents in Nepal[Data
+set].https://doi.org/10.26066/RDS.8899
+MuñozSabater, J.(2019).ERA5-Land hourly data from
+1950 to present[Data set]. Copernicus Climate Change
+Service.https://doi.org/10.24381/cds.e2161bac
+Data Summary
+The table distinguishes the data already supplied
+from the additional data needed for the proposed
+study.
+Dataset Variables, coverage and use
+ICIMOD fire
+records
+Coordinates, acquisition date and
+land cover; 1 February 2012–19 June
+2016. Supplied records will define
+recorded-fire labels after checks.
+ERA5-Land
+temperature
+2 m temperature and dewpoint;
+target period 25 January 2012–19
+June 2016. Used for temperature and
+moisture predictors. Full period still
+required.
+ERA5-Land
+rainfall
+Total precipitation over the same
+target period. Used for daily rainfall,
+recent totals and dry-day indicators.
+Full period still required.
+ERA5-Land
+wind
+10 m U and V components over the
+same target period. Used to derive
+wind speed. Full period still required.
+Nepal
+boundary
+National polygon to restrict analysis
+and sampling to Nepal; to be
+obtained.
+Forest cover
+and elevation
+Optional spatial layers, subject to
+availability and suitability for the
+study period. Used to define forested
+cells and terrain features.
+3

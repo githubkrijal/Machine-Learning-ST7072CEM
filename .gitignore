@@ -1,0 +1,14 @@
+.weather-venv/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.env
+*.log
+tmp/
+*.zip
+*.tar.gz
+*.joblib
+data/
+research/data/
+research_full/data/

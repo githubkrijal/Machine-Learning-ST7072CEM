@@ -1,0 +1,3 @@
+features,count,validation_ap
+"Terrain, location and season",9,0.019465690656180774
+Plus lagged weather,21,0.04527081345207318

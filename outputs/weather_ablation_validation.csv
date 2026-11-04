@@ -1,0 +1,3 @@
+experiment,features,validation_average_precision
+"Location, terrain and season",9,0.016382159371704678
+Same inputs plus lagged weather,20,0.041520606353618185

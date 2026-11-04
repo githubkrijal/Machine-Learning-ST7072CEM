@@ -1,0 +1,5 @@
+model,training_rows,evaluation_rows,positive_days,average_precision
+Logistic regression,166362,86870,930,0.1895974265764565
+Linear SVM,166362,86870,930,0.19048364142644178
+Random forest,166362,86870,930,0.24544328455177217
+Gradient boosting,166362,86870,930,0.2901783652546127

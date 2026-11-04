@@ -1,0 +1,20 @@
+{
+  "selected_model": "Gradient boosting",
+  "provisional": true,
+  "weather_locations": 108,
+  "selected_test": {
+    "model": "Gradient boosting",
+    "split": "test",
+    "selected": true,
+    "average_precision": 0.48770127756169973,
+    "roc_auc": 0.9440056685741456,
+    "precision": 0.6205962059620597,
+    "recall": 0.29934640522875816,
+    "f1": 0.4038800705467372,
+    "threshold": 0.955379252774588,
+    "true_negative": 17455,
+    "false_positive": 140,
+    "false_negative": 536,
+    "true_positive": 229
+  }
+}

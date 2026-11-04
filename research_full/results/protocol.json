@@ -1,0 +1,44 @@
+{
+  "seed": 42,
+  "families": [
+    "Logistic regression",
+    "Linear SVM",
+    "Random forest",
+    "Gradient boosting"
+  ],
+  "configurations_per_family": 3,
+  "primary_selection": "2015 average precision",
+  "secondary_selection": "2015 accuracy with validation-accuracy threshold",
+  "threshold_rules": [
+    "F1",
+    "accuracy"
+  ],
+  "train": "2012-02-02 to 2014-12-31",
+  "validation": "2015",
+  "test": "2016-01-01 to 2016-06-18",
+  "features": [
+    "temperature_2m_mean_previous_day",
+    "temperature_2m_max_previous_day",
+    "relative_humidity_2m_mean_previous_day",
+    "relative_humidity_2m_min_previous_day",
+    "wind_speed_10m_mean_previous_day",
+    "wind_speed_10m_max_previous_day",
+    "precipitation_previous_1d_mm",
+    "precipitation_previous_7d_mm",
+    "precipitation_previous_30d_mm",
+    "temperature_mean_previous_7d",
+    "humidity_mean_previous_7d",
+    "latitude",
+    "longitude",
+    "day_of_year_sin",
+    "day_of_year_cos",
+    "forest_fraction_2011",
+    "elevation_mean_m",
+    "slope_mean_degrees",
+    "aspect_northness_mean",
+    "aspect_eastness_mean",
+    "dry_days_previous"
+  ],
+  "data_sha256": "a796e2c9ca0b6ac40100c477d219e9e30ad02757b089402e05a1e1ffae7074b9",
+  "previous_test_exposure": "Earlier 108-location exploratory analysis used overlapping 2016 labels; this is not a pristine untouched external test."
+}

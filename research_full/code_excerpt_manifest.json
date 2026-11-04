@@ -1,0 +1,51 @@
+[
+  {
+    "image": "code_cleaning",
+    "source": "prepare_assignment.py",
+    "start": 106,
+    "end": 116,
+    "caption": "Date conversion and repeated-detection removal."
+  },
+  {
+    "image": "code_weather_features",
+    "source": "prepare_assignment.py",
+    "start": 137,
+    "end": 145,
+    "caption": "Past-only weather features and rolling summaries."
+  },
+  {
+    "image": "code_linear_models",
+    "source": "research_experiments.py",
+    "start": 78,
+    "end": 80,
+    "caption": "Scaled Logistic Regression and Linear SVM candidates."
+  },
+  {
+    "image": "code_tree_models",
+    "source": "research_experiments.py",
+    "start": 81,
+    "end": 82,
+    "caption": "Random Forest and Gradient Boosting settings."
+  },
+  {
+    "image": "code_preprocessing",
+    "source": "reanalysis_2026.py",
+    "start": 23,
+    "end": 25,
+    "caption": "Controlled PCA and SMOTE pipeline variants."
+  },
+  {
+    "image": "code_model_selection",
+    "source": "research_experiments.py",
+    "start": 90,
+    "end": 100,
+    "caption": "Training candidates and selecting validation settings."
+  },
+  {
+    "image": "code_evaluation",
+    "source": "research_experiments.py",
+    "start": 74,
+    "end": 76,
+    "caption": "Confusion counts and performance-metric calculation."
+  }
+]
